@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quản lý sản phẩm — Xưởng In Nhỏ</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/danhsachsanpham.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header>
+        <nav class="nav">
+
+            <a href="index.html" class="logo">
+                <img src="images/designer.png" alt="Xưởng In Nhỏ">
+                <span class="dot"></span>
+            </a>
+
+            <button class="nav-toggle" type="button" aria-label="Mở menu">
+                ☰
+            </button>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        TRANG CHỦ
+                    </a>
+                </li>
+
+                <li>
+                    <a href="sanpham.html">
+                        SẢN PHẨM
+                    </a>
+                </li>
+
+                <li>
+                    <a href="tinh-gia.html">
+                        TÍNH GIÁ
+                    </a>
+                </li>
+
+                <li>
+                    <a href="lien-he.html">
+                        LIÊN HỆ
+                    </a>
+                </li>
+
+                <li class="admin-nav-item">
+
+                    <a href="danhsachsanpham.html" class="active admin-link">
+                        QUẢN LÝ
+                    </a>
+
+                    <button type="button" id="logoutButton" class="admin-logout">
+                        ĐĂNG XUẤT
+                    </button>
+
+                </li>
+
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+        <!-- PAGE HEADER -->
+
+        <section class="admin-products-section">
+
+            <div class="container">
+
+                <div class="admin-page-header">
+
+                    <div>
+                        <span class="admin-label">
+                            ADMIN / PRODUCTS
+                        </span>
+
+                        <h1>
+                            Quản lý<br>
+                            sản phẩm.
+                        </h1>
+
+                        <p>
+                            Quản lý toàn bộ sản phẩm đang có trên Xưởng In Nhỏ.
+                            Tại đây m có thể thêm, chỉnh sửa hoặc xóa sản phẩm.
+                        </p>
+                    </div>
+
+                    <div class="admin-header-action">
+
+                        <a href="lienhethongtinKH.html" class="btn btn-secondary">
+                            THÔNG TIN KHÁCH HÀNG
+                        </a>
+
+                        <a href="chitietsanpham.html" class="btn btn-primary">
+                            + ĐĂNG SẢN PHẨM
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     TOOLBAR
+                ================================================== -->
+
+                <div class="product-toolbar">
+
+                    <div class="product-count">
+
+                        <span class="toolbar-label">
+                            TỔNG SẢN PHẨM
+                        </span>
+
+                        <strong id="productCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="toolbar-controls">
+
+                        <!-- Search -->
+
+                        <div class="search-box">
+
+                            <span class="search-icon">
+                                ⌕
+                            </span>
+
+                            <input type="search" id="searchInput" placeholder="Tìm sản phẩm..." autocomplete="off">
+
+                        </div>
+
+
+                        <!-- Category -->
+
+                        <select id="categoryFilter" class="filter-select">
+
+                            <option value="all">
+                                Tất cả danh mục
+                            </option>
+
+                            <option value="moc-khoa">
+                                Móc khóa
+                            </option>
+
+                            <option value="gia-dung">
+                                Gia dụng
+                            </option>
+
+                            <option value="trang-tri">
+                                Trang trí
+                            </option>
+
+                            <option value="mo-hinh">
+                                Mô hình
+                            </option>
+
+                            <option value="phu-kien">
+                                Phụ kiện
+                            </option>
+
+                        </select>
+
+
+                        <!-- Status -->
+
+                        <select id="statusFilter" class="filter-select">
+
+                            <option value="all">
+                                Tất cả trạng thái
+                            </option>
+
+                            <option value="Đang bán">
+                                Đang bán
+                            </option>
+
+                            <option value="Hết hàng">
+                                Hết hàng
+                            </option>
+
+                            <option value="Sắp có">
+                                Sắp có
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     MESSAGE
+                ================================================== -->
+
+                <div id="adminMessage" class="admin-message" aria-live="polite">
+                </div>
+
+
+                <!-- =================================================
+                     PRODUCT LIST
+                ================================================== -->
+
+                <div id="productList" class="admin-product-list">
+
+                    <!-- Loading -->
+
+                    <div class="product-loading-admin">
+                        <div class="loading-spinner"></div>
+                        <span>ĐANG TẢI SẢN PHẨM...</span>
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     EMPTY STATE
+                ================================================== -->
+
+                <div id="emptyState" class="empty-state" hidden>
+
+                    <div class="empty-icon">
+                        +
+                    </div>
+
+                    <h2>
+                        Chưa có sản phẩm
+                    </h2>
+
+                    <p>
+                        Hiện tại chưa có sản phẩm nào phù hợp với điều kiện tìm kiếm.
+                    </p>
+
+                    <a href="chitietsanpham.html" class="btn btn-primary">
+                        + ĐĂNG SẢN PHẨM
+                    </a>
+
+                </div>
+
+
+                <!-- =================================================
+                     DELETE ALL
+                ================================================== -->
+
+                <div class="danger-zone">
+
+                    <div>
+
+                        <span class="danger-label">
+                            KHU VỰC NGUY HIỂM
+                        </span>
+
+                        <p>
+                            Xóa toàn bộ sản phẩm khỏi cơ sở dữ liệu.
+                            Thao tác này không thể hoàn tác.
+                        </p>
+
+                    </div>
+
+                    <button type="button" id="deleteAllProducts" class="danger-button">
+                        XÓA TẤT CẢ
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         DELETE MODAL
+    ====================================================== -->
+
+    <div id="deleteModal" class="delete-modal" aria-hidden="true">
+
+        <div class="delete-modal-overlay"></div>
+
+        <div class="delete-modal-box" role="dialog" aria-modal="true" aria-labelledby="deleteModalTitle">
+
+            <div class="delete-modal-icon">
+                !
+            </div>
+
+            <h2 id="deleteModalTitle">
+                Xóa sản phẩm?
+            </h2>
+
+            <p id="deleteModalText">
+                Sản phẩm sẽ bị xóa khỏi cơ sở dữ liệu.
+            </p>
+
+            <div class="delete-modal-actions">
+
+                <button type="button" id="cancelDelete" class="modal-button modal-cancel">
+                    HỦY
+                </button>
+
+                <button type="button" id="confirmDelete" class="modal-button modal-delete">
+                    XÓA SẢN PHẨM
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © 2026 XƯỞNG IN NHỎ
+            </p>
+
+            <p>
+                ADMIN / QUẢN LÝ SẢN PHẨM
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         SUPABASE
+    ====================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Shared JS -->
+    <script src="JavaScript/index.js"></script>
+
+    <!-- Page JS -->
+    <script src="JavaScript/danhsachsanpham.js"></script>
+
+</body>
+
+</html>

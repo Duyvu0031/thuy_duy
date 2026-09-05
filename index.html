@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Đồ in 3D làm riêng cho bạn | Xưởng In Nhỏ
+    </title>
+
+
+    <!-- ==================================================
+         GOOGLE FONTS
+    ================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- ==================================================
+         CSS CHÍNH
+    ================================================== -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
+
+    <header>
+
+        <nav class="nav">
+
+
+            <!-- LOGO -->
+
+            <a href="index.html" class="logo">
+
+                <img src="images/designer.png" alt="Xưởng In Nhỏ">
+
+            </a>
+
+
+            <!-- MOBILE MENU -->
+
+            <button class="nav-toggle" aria-label="Mở menu">
+                ☰
+            </button>
+
+
+            <!-- MENU -->
+
+            <ul class="nav-links">
+
+                <li>
+
+                    <a href="index.html" class="active">
+                        Trang chủ
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="sanpham.html">
+                        Sản phẩm
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="tinh-gia.html">
+                        Bảng giá
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="#lien-he" class="cta">
+                        Liên hệ đặt hàng
+                    </a>
+
+                </li>
+
+
+                <!-- ==================================================
+                     ADMIN LOGIN
+                ================================================== -->
+
+                <li id="adminNavItem" class="admin-nav-item">
+
+                    <a href="dangnhap.html" id="adminLoginLink">
+                        Đăng nhập
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         HERO
+    ================================================== -->
+
+    <main>
+
+
+        <section class="hero">
+
+            <div class="container">
+
+
+                <!-- LEFT -->
+
+                <div>
+
+                    <span class="hero-tag">
+                        IN THEO YÊU CẦU · PLA / PETG
+                    </span>
+
+
+                    <h1>
+
+                        Đồ in 3D
+
+                        <br>
+
+                        làm riêng cho bạn.
+
+                    </h1>
+
+
+                    <p class="lead">
+
+                        Từ móc khóa khắc tên đến mô hình theo
+                        thiết kế riêng — in tại xưởng nhỏ,
+                        mỗi đơn đều tính giá rõ ràng theo
+                        lượng nhựa và thời gian in thật.
+
+                    </p>
+
+
+                    <div class="hero-actions">
+
+
+                        <a href="tinh-gia.html" class="btn btn-primary">
+                            Xem cách tính giá →
+                        </a>
+
+
+                        <a href="#san-pham" class="btn btn-outline">
+                            Xem sản phẩm
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RIGHT / PRODUCT PREVIEW -->
+
+                <div class="spec-card" id="latestProductCard">
+
+                    <div class="spec-head">
+                        <div>
+                            <div class="spec-title" id="latestProductName">
+                                ĐANG TẢI...
+                            </div>
+
+                            <div class="spec-sub" id="latestProductCategory">
+                                Sản phẩm mới nhất
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="spec-thumb">
+                        <img id="latestProductImage" src="images/products/moc-khoa-ten.jpg" alt="Sản phẩm mới nhất">
+                    </div>
+
+
+                    <div class="spec-row">
+                        <span>
+                            Khối lượng
+                        </span>
+
+                        <span id="latestProductWeight">
+                            —
+                        </span>
+                    </div>
+
+
+                    <div class="spec-row">
+                        <span>
+                            Thời gian in
+                        </span>
+
+                        <span id="latestProductTime">
+                            —
+                        </span>
+                    </div>
+
+
+                    <div class="spec-row">
+                        <span>
+                            Vật liệu
+                        </span>
+
+                        <span id="latestProductMaterial">
+                            —
+                        </span>
+                    </div>
+
+
+                    <div class="spec-row">
+                        <span>
+                            Máy in
+                        </span>
+
+                        <span id="latestProductPrinter">
+                            —
+                        </span>
+                    </div>
+
+
+                    <div class="spec-row">
+                        <span>
+                            Giá
+                        </span>
+
+                        <span id="latestProductPrice">
+                            —
+                        </span>
+                    </div>
+
+                </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             PRODUCTS
+        ================================================== -->
+
+        <section id="san-pham" class="home-products">
+            <div class="container">
+
+                <div class="section-head home-products-head">
+                    <div>
+                        <span class="section-kicker">SẢN PHẨM</span>
+
+                        <h2>
+                            Một vài sản phẩm<br>
+                            đang được nhận làm.
+                        </h2>
+                    </div>
+
+                    <p>
+                        Một số mẫu mới nhất từ xưởng.
+                        Mỗi sản phẩm đều có thông tin chi tiết
+                        về vật liệu, khối lượng và thời gian in.
+                    </p>
+                </div>
+
+                <!-- SẢN PHẨM ĐƯỢC LẤY TỪ SUPABASE -->
+                <div id="homeProductGrid" class="home-product-grid">
+                    <div class="home-products-loading">
+                        ĐANG TẢI SẢN PHẨM...
+                    </div>
+                </div>
+
+                <div class="home-products-footer">
+                    <a href="sanpham.html" class="btn btn-primary">
+                        Xem tất cả sản phẩm →
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- ==================================================
+             WHY US
+        ================================================== -->
+
+        <section>
+
+            <div class="container">
+
+
+                <div class="section-head">
+
+                    <h2>
+                        Vì sao chọn xưởng nhỏ
+                    </h2>
+
+                    <p>
+
+                        Không chạy theo số lượng lớn.
+                        Mỗi sản phẩm được làm và kiểm tra
+                        kỹ trước khi giao.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="feature-row">
+
+
+                    <!-- FEATURE 1 -->
+
+                    <div class="feature-item">
+
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+
+                            <rect x="4" y="4" width="16" height="16" rx="1" />
+
+                            <path d="M4 9h16M9 4v16" />
+
+                        </svg>
+
+
+                        <h3>
+                            Giá tính theo chi phí thật
+                        </h3>
+
+
+                        <p>
+
+                            Không áng chừng. Giá dựa trên
+                            lượng nhựa, thời gian máy chạy
+                            và công hoàn thiện.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- FEATURE 2 -->
+
+                    <div class="feature-item">
+
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+
+                            <path d="M12 3v6l4 2" />
+
+                            <circle cx="12" cy="12" r="9" />
+
+                        </svg>
+
+
+                        <h3>
+                            Làm theo đúng ý bạn
+                        </h3>
+
+
+                        <p>
+
+                            Đổi màu, đổi kích thước, khắc tên
+                            hoặc thay đổi thiết kế — mỗi đơn
+                            có thể là một bản riêng.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- FEATURE 3 -->
+
+                    <div class="feature-item">
+
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+
+                            <path d="M21 11.5a8.4 8.4 0 0 1-8.4 8.4H4l2.3-3.5A8.4 8.4 0 1 1 21 11.5Z" />
+
+                        </svg>
+
+
+                        <h3>
+                            Trao đổi trực tiếp
+                        </h3>
+
+
+                        <p>
+
+                            Nhắn tin trực tiếp qua Zalo hoặc
+                            Facebook, trao đổi mẫu và thống nhất
+                            trước khi in.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             PRICING
+        ================================================== -->
+
+        <section>
+
+            <div class="container">
+
+
+                <div class="pricing-teaser">
+
+
+                    <div>
+
+                        <h2>
+                            Bảng giá minh bạch
+                        </h2>
+
+
+                        <p>
+
+                            Mỗi đơn được tính từ khối lượng nhựa,
+                            thời gian in và công hoàn thiện.
+                            Không phải một con số áng chừng.
+
+                        </p>
+
+
+                        <a href="tinh-gia.html" class="btn btn-outline-dark">
+                            Mở công cụ tính giá →
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="formula-mini">
+
+
+                        <div class="f-row">
+
+                            <span>
+                                Vật liệu
+                            </span>
+
+                            <span>
+                                theo gram nhựa
+                            </span>
+
+                        </div>
+
+
+                        <div class="f-row">
+
+                            <span>
+                                Vận hành máy
+                            </span>
+
+                            <span>
+                                theo giờ in
+                            </span>
+
+                        </div>
+
+
+                        <div class="f-row">
+
+                            <span>
+                                Gia công
+                            </span>
+
+                            <span>
+                                theo độ phức tạp
+                            </span>
+
+                        </div>
+
+
+                        <div class="f-row f-total">
+
+                            <span>
+                                Giá bán
+                            </span>
+
+                            <span>
+                                xem ngay
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             CONTACT
+        ================================================== -->
+
+        <section id="lien-he">
+
+            <div class="container">
+
+
+                <div class="contact-grid">
+
+
+                    <div>
+
+                        <span class="hero-tag">
+                            LIÊN HỆ
+                        </span>
+
+
+                        <h2>
+
+                            Có ý tưởng?
+
+                            <br>
+
+                            Gửi cho xưởng.
+
+                        </h2>
+
+
+                        <p>
+
+                            Gửi hình mẫu, file 3D, kích thước
+                            mong muốn hoặc chỉ đơn giản là mô tả
+                            ý tưởng. Xưởng sẽ xem và báo giá
+                            trước khi in.
+
+                        </p>
+
+
+                        <a href="lien-he.html" class="btn btn-primary">
+                            Liên hệ đặt hàng →
+                        </a>
+
+                    </div>
+
+
+
+                    <ul class="channel-list">
+
+
+                        <li>
+
+                            <span class="channel-name">
+                                Zalo
+                            </span>
+
+                            <span class="channel-value">
+                                0376080031
+                            </span>
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="channel-name">
+                                Facebook
+                            </span>
+
+                            <span class="channel-value">
+                                Đang cập nhật
+                            </span>
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="channel-name">
+                                TikTok
+                            </span>
+
+                            <span class="channel-value">
+                                Đang cập nhật
+                            </span>
+
+                        </li>
+
+
+                        <li>
+
+                            <span class="channel-name">
+                                Email
+                            </span>
+
+                            <span class="channel-value">
+                                nguyenvutungduy@gmail.com
+                            </span>
+
+                        </li>
+
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © 2026 Xưởng In Nhỏ
+            </p>
+
+
+            <p>
+
+                <a href="sanpham.html">
+                    Sản phẩm
+                </a>
+
+                <a href="tinh-gia.html">
+                    Bảng giá
+                </a>
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ==================================================
+         SUPABASE
+    ================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="JavaScript/index.js"></script>
+
+
+</body>
+
+</html>

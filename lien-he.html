@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Liên hệ - Xưởng In Nhỏ</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/lien-he.css">
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <a href="index.html" class="logo">
+                XƯỞNG IN NHỎ
+            </a>
+
+            <nav class="main-nav">
+
+                <a href="index.html">
+                    Trang chủ
+                </a>
+
+                <a href="sanpham.html">
+                    Sản phẩm
+                </a>
+
+                <a href="tinh-gia.html">
+                    Tính giá
+                </a>
+
+                <a href="lien-he.html" class="active">
+                    Liên hệ
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="contact-hero">
+
+            <div class="container">
+
+                <div class="section-kicker">
+                    LIÊN HỆ XƯỞNG
+                </div>
+
+                <h1>
+                    Bạn có mẫu riêng<br>
+                    cần in?
+                </h1>
+
+                <p class="contact-hero-description">
+                    Gửi yêu cầu cho Xưởng In Nhỏ.
+                    Bạn chỉ cần mô tả sản phẩm mình muốn,
+                    để lại thông tin liên hệ và mình sẽ
+                    liên hệ lại để tư vấn, báo giá và thời gian in.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT CONTENT -->
+
+        <section class="contact-section">
+
+            <div class="container contact-layout">
+
+
+                <!-- ================= LEFT ================= -->
+
+                <div class="contact-info">
+
+                    <div class="section-kicker">
+                        XƯỞNG IN NHỎ
+                    </div>
+
+                    <h2>
+                        Mình có thể giúp gì cho bạn?
+                    </h2>
+
+                    <p>
+                        Không tìm thấy sản phẩm bạn cần trong danh sách?
+                        Không sao. Bạn có thể gửi yêu cầu in riêng.
+                    </p>
+
+                    <p>
+                        Sau khi nhận được thông tin,
+                        mình sẽ xem yêu cầu và liên hệ lại
+                        để trao đổi chi tiết.
+                    </p>
+
+
+                    <div class="contact-info-list">
+
+                        <div class="contact-info-item">
+
+                            <div class="contact-info-label">
+                                ĐIỆN THOẠI
+                            </div>
+
+                            <div class="contact-info-value">
+                                0376080031
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-info-item">
+
+                            <div class="contact-info-label">
+                                EMAIL
+                            </div>
+
+                            <div class="contact-info-value">
+                                nguyenvutungduy@gmail.com
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-info-item">
+
+                            <div class="contact-info-label">
+                                THỜI GIAN PHẢN HỒI
+                            </div>
+
+                            <div class="contact-info-value">
+                                Trong vòng 24 giờ
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= FORM ================= -->
+
+                <div class="contact-form-wrapper">
+
+                    <div class="form-heading">
+
+                        <span class="section-kicker">
+                            GỬI YÊU CẦU
+                        </span>
+
+                        <h2>
+                            Thông tin của bạn
+                        </h2>
+
+                        <p>
+                            Các thông tin có dấu <span>*</span> là bắt buộc.
+                        </p>
+
+                    </div>
+
+
+                    <form id="contactForm">
+
+
+                        <!-- THÔNG TIN KHÁCH -->
+
+                        <div class="form-section-title">
+                            Thông tin liên hệ
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="customerName">
+                                    Họ và tên <span>*</span>
+                                </label>
+
+                                <input type="text" id="customerName" name="customerName" placeholder="Nguyễn Văn A"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="customerPhone">
+                                    Số điện thoại <span>*</span>
+                                </label>
+
+                                <input type="tel" id="customerPhone" name="customerPhone" placeholder="09xx xxx xxx"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="customerEmail">
+                                Email
+                            </label>
+
+                            <input type="email" id="customerEmail" name="customerEmail" placeholder="email@example.com">
+
+                        </div>
+
+
+                        <!-- YÊU CẦU IN -->
+
+                        <div class="form-section-title">
+                            Yêu cầu in
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="productRequest">
+                                Bạn muốn in gì? <span>*</span>
+                            </label>
+
+                            <input type="text" id="productRequest" name="productRequest"
+                                placeholder="Ví dụ: Mô hình nhân vật, móc khóa, giá đỡ..." required>
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="quantity">
+                                    Số lượng
+                                </label>
+
+                                <input type="number" id="quantity" name="quantity" min="1" value="1">
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="material">
+                                    Loại nhựa
+                                </label>
+
+                                <select id="material" name="material">
+
+                                    <option value="">
+                                        Chưa biết / Tư vấn giúp mình
+                                    </option>
+
+                                    <option value="PLA">
+                                        PLA
+                                    </option>
+
+                                    <option value="PETG">
+                                        PETG
+                                    </option>
+
+                                    <option value="TPU">
+                                        TPU
+                                    </option>
+
+                                    <option value="ABS">
+                                        ABS
+                                    </option>
+
+                                    <option value="Khác">
+                                        Khác
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="color">
+                                Màu mong muốn
+                            </label>
+
+                            <input type="text" id="color" name="color" placeholder="Ví dụ: Đen, trắng, đỏ...">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="description">
+                                Mô tả yêu cầu <span>*</span>
+                            </label>
+
+                            <textarea id="description" name="description" rows="6"
+                                placeholder="Hãy mô tả kích thước, kiểu dáng hoặc những yêu cầu đặc biệt của bạn..."
+                                required></textarea>
+
+                        </div>
+
+
+                        <!-- FILE -->
+
+                        <div class="form-group">
+
+                            <label>
+                                File mẫu 3D
+                            </label>
+
+                            <div class="file-upload-box">
+
+                                <div class="file-upload-text">
+
+                                    <strong>
+                                        Chưa cần ở bước này
+                                    </strong>
+
+                                    <span>
+                                        Sau này mình sẽ thêm chức năng
+                                        upload STL / 3MF / OBJ tại đây.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- MESSAGE -->
+
+                        <div id="formMessage" class="form-message"></div>
+
+
+                        <!-- BUTTON -->
+
+                        <button type="submit" class="btn btn-primary contact-submit">
+                            GỬI YÊU CẦU
+                        </button>
+
+
+                        <p class="form-note">
+                            Bằng việc gửi yêu cầu, bạn đồng ý
+                            để Xưởng In Nhỏ sử dụng thông tin trên
+                            nhằm liên hệ và tư vấn cho yêu cầu của bạn.
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-inner">
+
+            <div>
+                <strong>
+                    XƯỞNG IN NHỎ
+                </strong>
+
+                <p>
+                    Đồ in 3D làm riêng cho bạn.
+                </p>
+            </div>
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Trang chủ
+                </a>
+
+                <a href="sanpham.html">
+                    Sản phẩm
+                </a>
+
+                <a href="tinh-gia.html">
+                    Tính giá
+                </a>
+
+                <a href="lien-he.html">
+                    Liên hệ
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- SUPABASE -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- LIEN HE JS -->
+    <script src="JavaScript/lien-he.js"></script>
+</body>
+
+
+</html>

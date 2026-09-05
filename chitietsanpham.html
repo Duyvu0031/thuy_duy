@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quản lý sản phẩm — Xưởng In Nhỏ</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chitietsanpham.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <a href="index.html" class="logo">
+                <img src="images/designer.png" alt="Xưởng In Nhỏ">
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Trang chủ</a>
+                <a href="sanpham.html">Sản phẩm</a>
+                <a href="tinh-gia.html">Bảng giá</a>
+                <a href="index.html#lien-he">Liên hệ đặt hàng</a>
+            </nav>
+
+            <button class="nav-toggle" aria-label="Mở menu">
+                ☰
+            </button>
+
+        </div>
+    </header>
+
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- TITLE -->
+        <section class="admin-hero">
+            <div class="container">
+
+                <div class="admin-tag">
+                    QUẢN LÝ SẢN PHẨM
+                </div>
+
+                <h1>
+                    Đăng sản phẩm
+                </h1>
+
+                <p>
+                    Thêm sản phẩm mới để sản phẩm xuất hiện trên trang
+                    <strong>sanpham.html</strong>.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- FORM -->
+        <section class="admin-section">
+            <div class="container">
+
+                <div class="admin-layout">
+
+                    <!-- FORM LEFT -->
+                    <div class="product-form">
+
+                        <div class="form-section">
+
+                            <div class="form-section-title">
+                                01 — THÔNG TIN CƠ BẢN
+                            </div>
+
+                            <div class="field">
+                                <label for="productName">
+                                    Tên sản phẩm
+                                </label>
+
+                                <input type="text" id="productName" placeholder="Ví dụ: Móc khóa tên riêng">
+                            </div>
+
+
+                            <div class="form-row">
+
+                                <div class="field">
+                                    <label for="productPrice">
+                                        Giá bán
+                                    </label>
+
+                                    <div class="input-money">
+                                        <input type="number" id="productPrice" placeholder="25000" min="0">
+                                        <span>đ</span>
+                                    </div>
+                                </div>
+
+
+                                <div class="field">
+                                    <label for="productCategory">
+                                        Danh mục
+                                    </label>
+
+                                    <select id="productCategory">
+
+                                        <option value="moc-khoa">
+                                            Móc khóa
+                                        </option>
+
+                                        <option value="gia-dung">
+                                            Đồ gia dụng
+                                        </option>
+
+                                        <option value="trang-tri">
+                                            Trang trí
+                                        </option>
+
+                                        <option value="mo-hinh">
+                                            Mô hình
+                                        </option>
+
+                                        <option value="phu-kien">
+                                            Phụ kiện
+                                        </option>
+
+                                    </select>
+                                </div>
+
+                            </div>
+
+
+                            <div class="field">
+                                <label for="productDescription">
+                                    Mô tả sản phẩm
+                                </label>
+
+                                <textarea id="productDescription" rows="5"
+                                    placeholder="Viết mô tả ngắn về sản phẩm..."></textarea>
+                            </div>
+
+                        </div>
+
+
+                        <!-- IMAGE -->
+                        <div class="form-section">
+
+                            <div class="form-section-title">
+                                02 — HÌNH ẢNH
+                            </div>
+
+                            <div class="image-upload">
+
+                                <input type="file" id="productImage" accept="image/*">
+
+                                <label for="productImage" class="image-upload-box">
+
+                                    <span class="upload-icon">
+                                        +
+                                    </span>
+
+                                    <strong>
+                                        CHỌN HÌNH SẢN PHẨM
+                                    </strong>
+
+                                    <small>
+                                        JPG, PNG hoặc WEBP
+                                    </small>
+
+                                </label>
+
+                            </div>
+
+                            <div id="imagePreview" class="image-preview"></div>
+
+                        </div>
+
+
+                        <!-- 3D PRINT -->
+                        <div class="form-section">
+
+                            <div class="form-section-title">
+                                03 — THÔNG SỐ IN 3D
+                            </div>
+
+
+                            <div class="form-row">
+
+                                <div class="field">
+
+                                    <label for="material">
+                                        Loại nhựa
+                                    </label>
+
+                                    <select id="material">
+
+                                        <option value="PLA">
+                                            PLA
+                                        </option>
+
+                                        <option value="PETG">
+                                            PETG
+                                        </option>
+
+                                        <option value="TPU">
+                                            TPU
+                                        </option>
+
+                                        <option value="ABS">
+                                            ABS
+                                        </option>
+
+                                        <option value="Khác">
+                                            Khác
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="field">
+
+                                    <label for="printTime">
+                                        Thời gian in
+                                    </label>
+
+                                    <input type="text" id="printTime" placeholder="Ví dụ: 2 giờ 15 phút">
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-row">
+
+                                <div class="field">
+
+                                    <label for="printer">
+                                        Máy in
+                                    </label>
+
+                                    <select id="printer">
+
+                                        <option value="Bambu Lab A1">
+                                            Bambu Lab A1
+                                        </option>
+
+                                        <option value="Bambu Lab A1 Mini">
+                                            Bambu Lab A1 Mini
+                                        </option>
+
+                                        <option value="Bambu Lab P1C">
+                                            Bambu Lab P1C
+                                        </option>
+
+                                        <option value="Bambu Lab P1S">
+                                            Bambu Lab P1S
+                                        </option>
+
+                                        <option value="Khác">
+                                            Khác
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="field">
+
+                                    <label for="weight">
+                                        Khối lượng nhựa
+                                    </label>
+
+                                    <div class="input-unit">
+
+                                        <input type="number" id="weight" placeholder="15" min="0" step="0.1">
+
+                                        <span>g</span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-row">
+
+                                <div class="field">
+
+                                    <label for="size">
+                                        Kích thước
+                                    </label>
+
+                                    <input type="text" id="size" placeholder="60 × 30 × 5 mm">
+
+                                </div>
+
+
+                                <div class="field">
+
+                                    <label for="infill">
+                                        Infill
+                                    </label>
+
+                                    <select id="infill">
+
+                                        <option value="10%">
+                                            10%
+                                        </option>
+
+                                        <option value="15%" selected>
+                                            15%
+                                        </option>
+
+                                        <option value="20%">
+                                            20%
+                                        </option>
+
+                                        <option value="25%">
+                                            25%
+                                        </option>
+
+                                        <option value="30%">
+                                            30%
+                                        </option>
+
+                                        <option value="40%">
+                                            40%
+                                        </option>
+
+                                        <option value="50%">
+                                            50%
+                                        </option>
+
+                                        <option value="100%">
+                                            100%
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-row">
+
+                                <div class="field">
+
+                                    <label for="support">
+                                        Support
+                                    </label>
+
+                                    <select id="support">
+
+                                        <option value="Không">
+                                            Không
+                                        </option>
+
+                                        <option value="Có">
+                                            Có
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="field">
+
+                                    <label for="colors">
+                                        Số màu
+                                    </label>
+
+                                    <select id="colors">
+
+                                        <option value="1 màu">
+                                            1 màu
+                                        </option>
+
+                                        <option value="2 màu">
+                                            2 màu
+                                        </option>
+
+                                        <option value="3 màu">
+                                            3 màu
+                                        </option>
+
+                                        <option value="4 màu">
+                                            4 màu
+                                        </option>
+
+                                        <option value="Nhiều màu">
+                                            Nhiều màu
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- STATUS -->
+                        <div class="form-section">
+
+                            <div class="form-section-title">
+                                04 — TRẠNG THÁI
+                            </div>
+
+                            <div class="status-options">
+
+                                <label class="status-option">
+
+                                    <input type="radio" name="status" value="Đang bán" checked>
+
+                                    <span>
+                                        Đang bán
+                                    </span>
+
+                                </label>
+
+
+                                <label class="status-option">
+
+                                    <input type="radio" name="status" value="Hết hàng">
+
+                                    <span>
+                                        Hết hàng
+                                    </span>
+
+                                </label>
+
+
+                                <label class="status-option">
+
+                                    <input type="radio" name="status" value="Sắp có">
+
+                                    <span>
+                                        Sắp có
+                                    </span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- BUTTON -->
+                        <div class="form-actions">
+
+                            <button type="button" id="saveProduct" class="save-button">
+                                ĐĂNG SẢN PHẨM →
+                            </button>
+
+                            <button type="button" id="clearForm" class="clear-button">
+                                XÓA FORM
+                            </button>
+
+                        </div>
+
+
+                        <div id="formMessage" class="form-message"></div>
+
+                    </div>
+
+
+                    <!-- PREVIEW RIGHT -->
+                    <aside class="product-preview">
+
+                        <div class="preview-label">
+                            XEM TRƯỚC
+                        </div>
+
+                        <div class="preview-card">
+
+                            <div id="previewImage" class="preview-image">
+                                <span>
+                                    CHƯA CÓ HÌNH
+                                </span>
+                            </div>
+
+
+                            <div class="preview-content">
+
+                                <div id="previewCategory" class="preview-category">
+                                    MÓC KHÓA
+                                </div>
+
+                                <h2 id="previewName">
+                                    Tên sản phẩm
+                                </h2>
+
+                                <div id="previewPrice" class="preview-price">
+                                    0 đ
+                                </div>
+
+
+                                <div class="preview-specs">
+
+                                    <div>
+                                        <span>NHỰA</span>
+                                        <strong id="previewMaterial">
+                                            PLA
+                                        </strong>
+                                    </div>
+
+                                    <div>
+                                        <span>THỜI GIAN</span>
+                                        <strong id="previewTime">
+                                            —
+                                        </strong>
+                                    </div>
+
+                                    <div>
+                                        <span>MÁY IN</span>
+                                        <strong id="previewPrinter">
+                                            Bambu Lab A1
+                                        </strong>
+                                    </div>
+
+                                    <div>
+                                        <span>KHỐI LƯỢNG</span>
+                                        <strong id="previewWeight">
+                                            —
+                                        </strong>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </aside>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- PRODUCT LIST -->
+        <section class="existing-products">
+
+            <div class="container">
+
+                <div class="existing-header">
+
+                    <div>
+                        <div class="admin-tag">
+                            SẢN PHẨM ĐÃ ĐĂNG
+                        </div>
+
+                        <h2>
+                            Danh sách sản phẩm
+                        </h2>
+                    </div>
+
+                    <button id="deleteAllProducts" class="delete-all-button">
+                        XÓA TẤT CẢ
+                    </button>
+
+                </div>
+
+
+                <div id="adminProductList" class="admin-product-list"></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="container footer-inner">
+
+            <div>
+                © 2026 Xưởng In Nhỏ
+            </div>
+
+            <div>
+                IN 3D · THIẾT KẾ · ĐẶT RIÊNG
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="JavaScript/index.js"></script>
+    <script src="JavaScript/chitietsanpham.js"></script>
+
+</body>
+
+</html>

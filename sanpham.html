@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sản phẩm in 3D | Xưởng In Nhỏ</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS CHUNG -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- CSS RIÊNG TRANG SẢN PHẨM -->
+    <link rel="stylesheet" href="css/sanpham.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+        <nav class="nav">
+
+            <a href="index.html" class="logo">
+                <img src="images/designer.png" alt="Xưởng In Nhỏ">
+            </a>
+
+            <button class="nav-toggle" type="button">
+                ☰
+            </button>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        Trang chủ
+                    </a>
+                </li>
+
+                <li>
+                    <a href="sanpham.html" class="active">
+                        Sản phẩm
+                    </a>
+                </li>
+
+                <li>
+                    <a href="tinh-gia.html">
+                        Bảng giá
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#lien-he" class="cta">
+                        Liên hệ đặt hàng
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- =========================
+         PAGE HEADER
+    ========================== -->
+
+    <section class="page-header">
+
+        <span class="page-tag">
+            XƯỞNG IN 3D · SẢN PHẨM CÓ SẴN
+        </span>
+
+        <h1>
+            Sản phẩm<br>
+            in 3D.
+        </h1>
+
+        <p>
+            Những sản phẩm mình đang nhận in tại xưởng.
+            Mỗi sản phẩm đều có thông tin rõ ràng về vật liệu,
+            khối lượng nhựa, thời gian in và máy sử dụng.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         FILTER
+    ========================== -->
+
+    <section class="filter-area">
+
+        <div class="categories">
+
+            <button class="category-btn active" data-category="all" type="button">
+                Tất cả
+            </button>
+
+            <button class="category-btn" data-category="moc-khoa" type="button">
+                Móc khóa
+            </button>
+
+            <button class="category-btn" data-category="gia-dung" type="button">
+                Đồ gia dụng
+            </button>
+
+            <button class="category-btn" data-category="trang-tri" type="button">
+                Trang trí
+            </button>
+
+            <button class="category-btn" data-category="mo-hinh" type="button">
+                Mô hình
+            </button>
+
+            <button class="category-btn" data-category="phu-kien" type="button">
+                Phụ kiện
+            </button>
+
+        </div>
+
+
+        <div class="sort-box">
+
+            <select id="sortProducts">
+
+                <option value="default">
+                    Sắp xếp
+                </option>
+
+                <option value="price-low">
+                    Giá thấp → cao
+                </option>
+
+                <option value="price-high">
+                    Giá cao → thấp
+                </option>
+
+                <option value="weight-low">
+                    Nhẹ → nặng
+                </option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PRODUCTS
+    ========================== -->
+
+    <main class="product-container">
+
+        <div class="product-grid" id="productGrid">
+
+            <!--
+                Sản phẩm sẽ được tải tự động
+                từ Supabase bằng sanpham.js
+            -->
+
+            <div class="products-loading">
+                ĐANG TẢI SẢN PHẨM...
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-inner">
+
+            <p>
+                © 2026 Xưởng In Nhỏ
+            </p>
+
+            <p>
+                <a href="tinh-gia.html">
+                    Bảng giá
+                </a>
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- JavaScript dùng chung -->
+    <script src="JavaScript/index.js"></script>
+
+    <!-- JavaScript riêng trang sản phẩm -->
+    <script src="JavaScript/sanpham.js"></script>
+
+</body>
+
+</html>

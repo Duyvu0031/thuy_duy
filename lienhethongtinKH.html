@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thông tin khách hàng - Xưởng In Nhỏ</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f6f8;
+            color: #1f2937;
+        }
+
+        .header {
+            background: #111827;
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: white;
+            background: #374151;
+            padding: 10px 15px;
+            border-radius: 8px;
+        }
+
+        .container {
+            max-width: 1500px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            background: white;
+            padding: 18px 22px;
+            border-radius: 12px;
+            min-width: 180px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
+        }
+
+        .stat-title {
+            color: #6b7280;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .stat-number {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .toolbar {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .search {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .search input,
+        .toolbar select {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .toolbar select {
+            width: 200px;
+        }
+
+        .refresh-btn {
+            border: none;
+            background: #2563eb;
+            color: white;
+            padding: 11px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .table-wrapper {
+            background: white;
+            border-radius: 12px;
+            overflow-x: auto;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
+        }
+
+        table {
+            width: 100%;
+            min-width: 1200px;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #f9fafb;
+            padding: 15px;
+            text-align: left;
+            font-size: 13px;
+            color: #4b5563;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+
+        tr:hover {
+            background: #fafafa;
+        }
+
+        .customer-name {
+            font-weight: 600;
+        }
+
+        .date {
+            white-space: nowrap;
+            color: #4b5563;
+        }
+
+        .status {
+            padding: 7px 10px;
+            border-radius: 7px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .status-pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .status-processing {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .status-contacted {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+
+        .status-done {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .detail-btn {
+            border: none;
+            background: #111827;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        .loading,
+        .empty {
+            padding: 50px;
+            text-align: center;
+            color: #6b7280;
+        }
+
+        /* MODAL */
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .55);
+            z-index: 1000;
+            padding: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            width: 100%;
+            max-width: 700px;
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            background: #111827;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            padding: 25px;
+        }
+
+        .detail-row {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: 15px;
+            padding: 13px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .detail-label {
+            color: #6b7280;
+            font-weight: 600;
+        }
+
+        .description {
+            white-space: pre-wrap;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+
+        <h1>Thông tin khách hàng</h1>
+
+        <a href="danhsachsanpham.html" class="back-btn">
+            ← Quản lý sản phẩm
+        </a>
+
+    </header>
+
+
+    <main class="container">
+
+        <div class="stats">
+
+            <div class="stat">
+                <div class="stat-title">
+                    Tổng yêu cầu
+                </div>
+
+                <div id="totalRequests" class="stat-number">
+                    0
+                </div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-title">
+                    Chưa xử lý
+                </div>
+
+                <div id="pendingRequests" class="stat-number">
+                    0
+                </div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-title">
+                    Đang xử lý
+                </div>
+
+                <div id="processingRequests" class="stat-number">
+                    0
+                </div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-title">
+                    Hoàn thành
+                </div>
+
+                <div id="doneRequests" class="stat-number">
+                    0
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="toolbar">
+
+            <div class="search">
+
+                <input type="text" id="searchInput" placeholder="Tìm tên, SĐT, email, sản phẩm...">
+
+            </div>
+
+            <select id="statusFilter">
+
+                <option value="">
+                    Tất cả trạng thái
+                </option>
+
+                <option value="Chưa xử lý">
+                    Chưa xử lý
+                </option>
+
+                <option value="Đang xử lý">
+                    Đang xử lý
+                </option>
+
+                <option value="Đã liên hệ">
+                    Đã liên hệ
+                </option>
+
+                <option value="Hoàn thành">
+                    Hoàn thành
+                </option>
+
+            </select>
+
+            <button id="refreshBtn" class="refresh-btn">
+                Làm mới
+            </button>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <div id="loading" class="loading">
+                Đang tải thông tin khách hàng...
+            </div>
+
+
+            <table id="customerTable" style="display:none;">
+
+                <thead>
+
+                    <tr>
+
+                        <th>STT</th>
+                        <th>Khách hàng</th>
+                        <th>Số điện thoại</th>
+                        <th>Email</th>
+                        <th>Sản phẩm</th>
+                        <th>SL</th>
+                        <th>Nhựa</th>
+                        <th>Màu</th>
+                        <th>Ngày gửi</th>
+                        <th>Trạng thái</th>
+                        <th></th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="customerTableBody"></tbody>
+
+            </table>
+
+
+            <div id="emptyMessage" class="empty" style="display:none;">
+                Chưa có yêu cầu khách hàng nào.
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- CHI TIẾT -->
+
+    <div id="detailModal" class="modal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>
+                    Chi tiết yêu cầu
+                </h2>
+
+                <button id="closeModal" class="close-btn">
+                    ×
+                </button>
+
+            </div>
+
+            <div id="detailBody" class="modal-body"></div>
+
+        </div>
+
+    </div>
+
+
+    <script src="JavaScript/lienhethongtinKH.js"></script>
+
+</body>
+
+</html>

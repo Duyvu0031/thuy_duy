@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chi tiết sản phẩm | Xưởng In Nhỏ</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chitietsanpham-khach.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+
+            <a href="index.html" class="logo">
+                XƯỞNG IN NHỎ
+            </a>
+
+            <button class="nav-toggle" aria-label="Mở menu">
+                ☰
+            </button>
+
+            <nav class="nav-links">
+                <a href="index.html">
+                    TRANG CHỦ
+                </a>
+
+                <a href="sanpham.html">
+                    SẢN PHẨM
+                </a>
+
+                <a href="tinh-gia.html">
+                    TÍNH GIÁ
+                </a>
+
+                <a href="lienhe.html">
+                    LIÊN HỆ
+                </a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- PRODUCT DETAIL -->
+    <main>
+
+        <section class="product-detail">
+
+            <div class="detail-container">
+
+                <!-- PRODUCT IMAGE -->
+                <div class="detail-image">
+                    <img id="productImage" src="" alt="Sản phẩm">
+                </div>
+
+
+                <!-- PRODUCT INFO -->
+                <div class="detail-info">
+
+                    <div class="detail-category" id="productCategory">
+                    </div>
+
+                    <h1 id="productName">
+                        ĐANG TẢI...
+                    </h1>
+
+                    <div class="detail-price" id="productPrice">
+                    </div>
+
+                    <p class="detail-description" id="productDescription">
+                    </p>
+
+
+                    <!-- TAGS -->
+                    <div class="detail-tags" id="productTags">
+                    </div>
+
+
+                    <!-- SPECS -->
+                    <div class="detail-specs">
+
+                        <div class="detail-spec">
+                            <span>CHẤT LIỆU</span>
+                            <strong id="productMaterial">-</strong>
+                        </div>
+
+                        <div class="detail-spec">
+                            <span>KHỐI LƯỢNG</span>
+                            <strong id="productWeight">-</strong>
+                        </div>
+
+                        <div class="detail-spec">
+                            <span>THỜI GIAN IN</span>
+                            <strong id="productPrintTime">-</strong>
+                        </div>
+
+                        <div class="detail-spec">
+                            <span>MÁY IN</span>
+                            <strong id="productPrinter">-</strong>
+                        </div>
+
+                        <div class="detail-spec">
+                            <span>KÍCH THƯỚC</span>
+                            <strong id="productSize">-</strong>
+                        </div>
+
+                        <div class="detail-spec">
+                            <span>INFILL</span>
+                            <strong id="productInfill">-</strong>
+                        </div>
+
+                        <div class="detail-spec">
+                            <span>SUPPORT</span>
+                            <strong id="productSupport">-</strong>
+                        </div>
+
+                        <div class="detail-spec">
+                            <span>MÀU</span>
+                            <strong id="productColors">-</strong>
+                        </div>
+
+                    </div>
+
+
+                    <!-- ORDER -->
+                    <button id="orderButton" class="order-button">
+                        ĐẶT HÀNG
+                    </button>
+
+                    <a href="sanpham.html" class="back-button">
+                        ← QUAY LẠI SẢN PHẨM
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PAYMENT MODAL -->
+    <div class="payment-modal" id="paymentModal">
+
+        <div class="payment-overlay"></div>
+
+        <div class="payment-box">
+
+            <button class="payment-close" id="paymentClose">
+                ×
+            </button>
+
+
+            <div class="payment-label">
+                THANH TOÁN
+            </div>
+
+
+            <h2>
+                QUÉT QR ĐỂ THANH TOÁN
+            </h2>
+
+
+            <!-- PRODUCT -->
+            <p class="payment-product">
+                <span>Sản phẩm:</span>
+
+                <strong id="paymentProductName">
+                </strong>
+            </p>
+
+
+            <!-- TOTAL -->
+            <p class="payment-total">
+                <span>Tổng tiền:</span>
+
+                <strong id="paymentAmount">
+                </strong>
+            </p>
+
+
+            <!-- ================================ -->
+            <!-- QR THANH TOÁN -->
+            <!-- ================================ -->
+
+            <div class="qr-container">
+
+                <img id="paymentQR" src="images/ma_qr.jpg" alt="QR thanh toán">
+
+            </div>
+
+
+            <p class="payment-note">
+                Mở ứng dụng ngân hàng → Quét QR →
+                kiểm tra số tiền và nội dung →
+                xác nhận thanh toán.
+            </p>
+
+
+            <!-- BANK INFORMATION -->
+            <div class="bank-info">
+
+                <div>
+                    NGÂN HÀNG
+
+                    <strong id="bankName">
+                    </strong>
+                </div>
+
+
+                <div>
+                    SỐ TÀI KHOẢN
+
+                    <strong id="bankAccount">
+                    </strong>
+                </div>
+
+
+                <div>
+                    CHỦ TÀI KHOẢN
+
+                    <strong id="bankOwner">
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SUPABASE -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="JavaScript/index.js"></script>
+
+    <script src="JavaScript/chitietsanpham-khach.js"></script>
+
+</body>
+
+</html>

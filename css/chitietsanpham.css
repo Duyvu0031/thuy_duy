@@ -1,0 +1,585 @@
+/* =========================================================
+   CHI TIET SAN PHAM
+   Trang quản lý / đăng sản phẩm
+========================================================= */
+
+.admin-hero {
+    background: var(--ink);
+    color: var(--text-hi);
+    padding: 80px 0 70px;
+}
+
+.admin-tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+}
+
+.admin-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 0.95;
+    margin: 0 0 24px;
+    text-transform: uppercase;
+}
+
+.admin-hero p {
+    max-width: 650px;
+    color: var(--text-lo);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.admin-hero strong {
+    color: var(--text-hi);
+}
+
+
+/* =========================================================
+   FORM AREA
+========================================================= */
+
+.admin-section {
+    background: var(--paper);
+    padding: 70px 0;
+}
+
+.admin-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 50px;
+    align-items: start;
+}
+
+.product-form {
+    background: #fff;
+    border: 1px solid var(--line-on-paper);
+}
+
+.form-section {
+    padding: 32px;
+    border-bottom: 1px solid var(--line-on-paper);
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+}
+
+.form-section-title {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--clay);
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.field {
+    margin-bottom: 22px;
+}
+
+.field:last-child {
+    margin-bottom: 0;
+}
+
+.field label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    margin-bottom: 9px;
+    color: var(--text-ink);
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--line-on-paper);
+    background: var(--paper);
+    color: var(--text-ink);
+    border-radius: 2px;
+    padding: 13px 14px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.field textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    border-color: var(--clay);
+    background: #fff;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+
+/* =========================================================
+   MONEY / UNIT INPUT
+========================================================= */
+
+.input-money,
+.input-unit {
+    position: relative;
+}
+
+.input-money input {
+    padding-right: 38px;
+}
+
+.input-unit input {
+    padding-right: 38px;
+}
+
+.input-money span,
+.input-unit span {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-ink-muted);
+}
+
+
+/* =========================================================
+   IMAGE UPLOAD
+========================================================= */
+
+.image-upload input {
+    display: none;
+}
+
+.image-upload-box {
+    min-height: 190px;
+    border: 2px dashed var(--line-on-paper);
+    background: var(--paper);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.image-upload-box:hover {
+    border-color: var(--clay);
+    background: #fff;
+}
+
+.upload-icon {
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--clay);
+    color: var(--clay);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.image-upload-box strong {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.image-upload-box small {
+    margin-top: 8px;
+    color: var(--text-ink-muted);
+    font-size: 12px;
+}
+
+.image-preview {
+    display: none;
+    margin-top: 18px;
+}
+
+.image-preview img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+    background: var(--paper);
+    border: 1px solid var(--line-on-paper);
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.status-option {
+    cursor: pointer;
+}
+
+.status-option input {
+    display: none;
+}
+
+.status-option span {
+    display: block;
+    padding: 12px 18px;
+    border: 1px solid var(--line-on-paper);
+    background: var(--paper);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    transition: 0.2s;
+}
+
+.status-option input:checked+span {
+    background: var(--pine);
+    border-color: var(--pine);
+    color: white;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    padding: 28px 32px;
+    background: var(--ink);
+}
+
+.save-button {
+    flex: 1;
+    border: none;
+    background: var(--clay);
+    color: white;
+    padding: 16px 22px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.save-button:hover {
+    background: var(--clay-dark);
+}
+
+.clear-button {
+    border: 1px solid #555;
+    background: transparent;
+    color: var(--text-hi);
+    padding: 16px 22px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.clear-button:hover {
+    background: #2b2a27;
+}
+
+.form-message {
+    display: none;
+    padding: 14px 32px;
+    background: var(--pine-light);
+    color: var(--pine);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   PREVIEW
+========================================================= */
+
+.product-preview {
+    position: sticky;
+    top: 30px;
+}
+
+.preview-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.preview-card {
+    background: #fff;
+    border: 1px solid var(--line-on-paper);
+}
+
+.preview-image {
+    height: 290px;
+    background: var(--paper-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.preview-image span {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-ink-muted);
+}
+
+.preview-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.preview-content {
+    padding: 24px;
+}
+
+.preview-category {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--clay);
+    margin-bottom: 10px;
+}
+
+.preview-content h2 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    line-height: 1.05;
+    text-transform: uppercase;
+    margin: 0 0 15px;
+}
+
+.preview-price {
+    font-family: var(--font-display);
+    font-size: 25px;
+    margin-bottom: 22px;
+}
+
+.preview-specs {
+    border-top: 1px solid var(--line-on-paper);
+}
+
+.preview-specs div {
+    padding: 11px 0;
+    border-bottom: 1px solid var(--line-on-paper);
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.preview-specs span {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--text-ink-muted);
+}
+
+.preview-specs strong {
+    font-size: 11px;
+    text-align: right;
+}
+
+
+/* =========================================================
+   EXISTING PRODUCTS
+========================================================= */
+
+.existing-products {
+    background: var(--ink);
+    color: var(--text-hi);
+    padding: 70px 0;
+}
+
+.existing-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+.existing-header h2 {
+    font-family: var(--font-display);
+    font-size: 38px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.delete-all-button {
+    border: 1px solid #555;
+    background: transparent;
+    color: var(--text-hi);
+    padding: 12px 18px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.delete-all-button:hover {
+    background: var(--clay);
+    border-color: var(--clay);
+}
+
+.admin-product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.admin-product-item {
+    background: var(--ink-2);
+    border: 1px solid var(--line);
+}
+
+.admin-product-item-image {
+    height: 180px;
+    background: #2b2a27;
+    overflow: hidden;
+}
+
+.admin-product-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.admin-product-item-content {
+    padding: 20px;
+}
+
+.admin-product-item-content h3 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    line-height: 1.1;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+
+.admin-product-price {
+    color: var(--clay);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.admin-product-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.admin-product-actions button {
+    flex: 1;
+    padding: 9px;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--text-hi);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    cursor: pointer;
+}
+
+.admin-product-actions button:hover {
+    background: var(--clay);
+    border-color: var(--clay);
+}
+
+.empty-products {
+    border: 1px dashed var(--line);
+    padding: 40px;
+    text-align: center;
+    color: var(--text-lo);
+    font-family: var(--font-mono);
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .admin-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .product-preview {
+        position: static;
+    }
+
+    .admin-product-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .admin-hero {
+        padding: 55px 0;
+    }
+
+    .admin-section {
+        padding: 40px 0;
+    }
+
+    .form-section {
+        padding: 22px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-actions {
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .existing-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-product-list {
+        grid-template-columns: 1fr;
+    }
+
+}

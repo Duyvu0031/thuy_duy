@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tính giá sản phẩm — Xưởng In Nhỏ</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tinh_gia.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header>
+        <nav class="nav">
+
+            <a href="index.html" class="logo">
+                <img src="images/designer.png" alt="Xưởng In Nhỏ">
+            </a>
+
+            <button class="nav-toggle" type="button" aria-label="Mở menu">
+                ☰
+            </button>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">Trang chủ</a>
+                </li>
+
+                <li>
+                    <a href="sanpham.html">Sản phẩm</a>
+                </li>
+
+                <li>
+                    <a href="tinh-gia.html" class="active">
+                        Bảng giá
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#lien-he" class="cta">
+                        Liên hệ đặt hàng
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- =========================================
+         PAGE HEADER
+    ========================================== -->
+
+    <main>
+
+        <section class="price-hero">
+
+            <div class="container">
+
+                <div class="price-hero-content">
+
+                    <div class="page-tag">
+                        MINH BẠCH · DỄ KIỂM CHỨNG
+                    </div>
+
+                    <h1>
+                        Giá một sản phẩm<br>
+                        được tính như thế nào?
+                    </h1>
+
+                    <p>
+                        Xưởng không đặt giá theo cảm tính. Mỗi sản phẩm được
+                        tính dựa trên lượng vật liệu, thời gian máy hoạt động,
+                        công đoạn hoàn thiện và chi phí vận hành thực tế.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             FORMULA
+        ========================================== -->
+
+        <section class="formula-section">
+
+            <div class="container">
+
+                <div class="section-head">
+                    <div>
+                        <div class="section-kicker">
+                            01 / CÔNG THỨC
+                        </div>
+
+                        <h2>
+                            Một mức giá có cơ sở
+                        </h2>
+                    </div>
+
+                    <p>
+                        Các khoản được tách riêng để khách hàng dễ hiểu
+                        mình đang trả tiền cho điều gì.
+                    </p>
+                </div>
+
+
+                <div class="formula-flow">
+
+                    <div class="formula-box">
+
+                        <div class="formula-number">
+                            01
+                        </div>
+
+                        <div class="formula-label">
+                            VẬT LIỆU
+                        </div>
+
+                        <div class="formula-value">
+                            Gram nhựa
+                        </div>
+
+                        <div class="formula-note">
+                            PLA / PETG
+                        </div>
+
+                    </div>
+
+
+                    <span class="formula-plus">
+                        +
+                    </span>
+
+
+                    <div class="formula-box">
+
+                        <div class="formula-number">
+                            02
+                        </div>
+
+                        <div class="formula-label">
+                            VẬN HÀNH
+                        </div>
+
+                        <div class="formula-value">
+                            Giờ máy
+                        </div>
+
+                        <div class="formula-note">
+                            Điện + hao mòn
+                        </div>
+
+                    </div>
+
+
+                    <span class="formula-plus">
+                        +
+                    </span>
+
+
+                    <div class="formula-box">
+
+                        <div class="formula-number">
+                            03
+                        </div>
+
+                        <div class="formula-label">
+                            GIA CÔNG
+                        </div>
+
+                        <div class="formula-value">
+                            Công sức
+                        </div>
+
+                        <div class="formula-note">
+                            Lắp ráp / hoàn thiện
+                        </div>
+
+                    </div>
+
+
+                    <span class="formula-plus">
+                        +
+                    </span>
+
+
+                    <div class="formula-box">
+
+                        <div class="formula-number">
+                            04
+                        </div>
+
+                        <div class="formula-label">
+                            HAO HỤT
+                        </div>
+
+                        <div class="formula-value">
+                            Chi phí phụ
+                        </div>
+
+                        <div class="formula-note">
+                            Vật tư + lỗi in
+                        </div>
+
+                    </div>
+
+
+                    <span class="formula-equal">
+                        =
+                    </span>
+
+
+                    <div class="formula-box formula-total">
+
+                        <div class="formula-number">
+                            GIÁ
+                        </div>
+
+                        <div class="formula-label">
+                            GIÁ BÁN
+                        </div>
+
+                        <div class="formula-value">
+                            Chi phí + lợi nhuận
+                        </div>
+
+                        <div class="formula-note">
+                            Không bán dưới giá thành
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CALCULATOR
+        ========================================== -->
+
+        <section class="calculator-section">
+
+            <div class="container">
+
+                <div class="section-head">
+
+                    <div>
+
+                        <div class="section-kicker">
+                            02 / TÍNH THỬ
+                        </div>
+
+                        <h2>
+                            Tự tính giá sản phẩm
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Lấy số liệu trực tiếp từ Bambu Studio, OrcaSlicer,
+                        Cura hoặc phần mềm slicer đang sử dụng.
+                    </p>
+
+                </div>
+
+
+                <div class="calculator">
+
+                    <!-- =========================
+                         INPUT
+                    ========================== -->
+
+                    <div class="calculator-input">
+
+                        <div class="calculator-title">
+                            THÔNG SỐ ĐẦU VÀO
+                        </div>
+
+
+                        <!-- Material -->
+
+                        <div class="field">
+
+                            <label for="material">
+                                Loại nhựa
+                            </label>
+
+                            <select id="material">
+
+                                <option value="pla">
+                                    PLA
+                                </option>
+
+                                <option value="petg">
+                                    PETG
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Weight -->
+
+                        <div class="field">
+
+                            <label for="weight">
+                                Khối lượng nhựa
+                                <span>gram</span>
+                            </label>
+
+                            <input type="number" id="weight" value="15" min="0" step="0.1">
+
+                            <div class="field-help">
+                                Lấy từ mục Weight / Filament
+                                trong slicer.
+                            </div>
+
+                        </div>
+
+
+                        <!-- Print time -->
+
+                        <div class="field">
+
+                            <label for="hours">
+                                Thời gian in
+                                <span>giờ</span>
+                            </label>
+
+                            <input type="number" id="hours" value="1.5" min="0" step="0.1">
+
+                            <div class="field-help">
+                                Ví dụ: 1 giờ 30 phút = 1.5 giờ.
+                            </div>
+
+                        </div>
+
+
+                        <!-- Finishing -->
+
+                        <div class="field">
+
+                            <label for="finishing">
+                                Mức độ gia công
+                            </label>
+
+                            <select id="finishing">
+
+                                <option value="none">
+                                    Không / rất ít
+                                </option>
+
+                                <option value="simple" selected>
+                                    Đơn giản
+                                </option>
+
+                                <option value="medium">
+                                    Trung bình
+                                </option>
+
+                                <option value="complex">
+                                    Phức tạp
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Quantity -->
+
+                        <div class="field">
+
+                            <label for="quantity">
+                                Số lượng
+                            </label>
+
+                            <input type="number" id="quantity" value="1" min="1" step="1">
+
+                        </div>
+                        <button type="button" class="calculate-button" id="calculateButton">
+                            TÍNH GIÁ SẢN PHẨM →
+                        </button>
+
+
+                        <div class="calculator-tip">
+
+                            <strong>💡 Mẹo:</strong>
+
+                            <p>
+                                Để có giá chính xác nhất, hãy nhập đúng
+                                khối lượng và thời gian in mà slicer
+                                báo sau khi đã slice file.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                         OUTPUT
+                    ========================== -->
+
+                    <div class="calculator-output">
+
+                        <div class="calculator-title">
+                            CHI PHÍ DỰ KIẾN
+                        </div>
+
+
+                        <!-- Material -->
+
+                        <div class="result-row">
+
+                            <div>
+                                <span class="result-name">
+                                    Vật liệu
+                                </span>
+
+                                <span class="result-detail" id="materialDetail">
+                                    15 g × đơn giá nhựa
+                                </span>
+                            </div>
+
+                            <strong id="outMaterial">
+                                0 đ
+                            </strong>
+
+                        </div>
+
+
+                        <!-- Machine -->
+
+                        <div class="result-row">
+
+                            <div>
+                                <span class="result-name">
+                                    Vận hành máy
+                                </span>
+
+                                <span class="result-detail" id="machineDetail">
+                                    1.5 giờ × đơn giá máy
+                                </span>
+                            </div>
+
+                            <strong id="outMachine">
+                                0 đ
+                            </strong>
+
+                        </div>
+
+
+                        <!-- Finishing -->
+
+                        <div class="result-row">
+
+                            <div>
+                                <span class="result-name">
+                                    Gia công
+                                </span>
+
+                                <span class="result-detail" id="finishingDetail">
+                                    Công hoàn thiện
+                                </span>
+                            </div>
+
+                            <strong id="outFinishing">
+                                0 đ
+                            </strong>
+
+                        </div>
+
+
+                        <!-- Overhead -->
+
+                        <div class="result-row">
+
+                            <div>
+                                <span class="result-name">
+                                    Hao hụt & chi phí phụ
+                                </span>
+
+                                <span class="result-detail">
+                                    Vật tư + rủi ro sản xuất
+                                </span>
+                            </div>
+
+                            <strong id="outOverhead">
+                                0 đ
+                            </strong>
+
+                        </div>
+
+
+                        <!-- Production cost -->
+
+                        <div class="result-subtotal">
+
+                            <span>
+                                Chi phí sản xuất
+                            </span>
+
+                            <strong id="outCost">
+                                0 đ
+                            </strong>
+
+                        </div>
+
+
+                        <!-- Profit -->
+
+                        <div class="profit-row">
+
+                            <div>
+
+                                <span class="result-name">
+                                    Phí xưởng & lợi nhuận
+                                </span>
+
+                                <span class="result-detail">
+                                    Duy trì hoạt động và phát triển xưởng
+                                </span>
+
+                            </div>
+
+                            <strong id="outProfit">
+                                0 đ
+                            </strong>
+
+                        </div>
+
+
+                        <!-- Final price -->
+
+                        <div class="final-price">
+
+                            <div class="final-label">
+                                GIÁ BÁN ĐỀ XUẤT
+                            </div>
+
+                            <div class="final-value" id="outPrice">
+                                0 đ
+                            </div>
+
+                            <div class="final-unit" id="outUnitPrice">
+                                0 đ / sản phẩm
+                            </div>
+
+                        </div>
+
+
+                        <!-- Transparency -->
+
+                        <div class="transparency-box">
+
+                            <div class="transparency-title">
+                                Tại sao giá này hợp lý?
+                            </div>
+
+                            <p id="priceExplanation">
+                                Giá được tính dựa trên vật liệu,
+                                thời gian máy, công hoàn thiện và
+                                chi phí vận hành.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CHECKING BASIS
+        ========================================== -->
+
+        <section class="checking-section">
+
+            <div class="container">
+
+                <div class="section-head">
+
+                    <div>
+
+                        <div class="section-kicker">
+                            03 / CƠ SỞ KIỂM CHỨNG
+                        </div>
+
+                        <h2>
+                            Khách hàng có thể kiểm tra từ đâu?
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Các thông số đầu vào không phải con số tự nghĩ ra.
+                    </p>
+
+                </div>
+
+
+                <div class="checking-grid">
+
+                    <div class="checking-card">
+
+                        <div class="checking-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Khối lượng nhựa
+                        </h3>
+
+                        <p>
+                            Lấy trực tiếp từ phần mềm slicer sau khi
+                            slice file. Đây là cơ sở để biết sản phẩm
+                            thực tế sử dụng bao nhiêu gram nhựa.
+                        </p>
+
+                        <span class="checking-source">
+                            Bambu Studio / OrcaSlicer / Cura
+                        </span>
+
+                    </div>
+
+
+                    <div class="checking-card">
+
+                        <div class="checking-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Thời gian in
+                        </h3>
+
+                        <p>
+                            Dựa trên thời gian máy dự kiến trong slicer.
+                            Thời gian thực tế có thể dao động nhẹ tùy
+                            điều kiện vận hành.
+                        </p>
+
+                        <span class="checking-source">
+                            Print time
+                        </span>
+
+                    </div>
+
+
+                    <div class="checking-card">
+
+                        <div class="checking-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Chi phí máy
+                        </h3>
+
+                        <p>
+                            Không chỉ tính tiền điện. Chi phí vận hành
+                            còn bao gồm hao mòn linh kiện, bảo trì,
+                            khấu hao máy và thời gian máy bị chiếm dụng.
+                        </p>
+
+                        <span class="checking-source">
+                            Điện + hao mòn + khấu hao
+                        </span>
+
+                    </div>
+
+
+                    <div class="checking-card">
+
+                        <div class="checking-number">
+                            04
+                        </div>
+
+                        <h3>
+                            Gia công
+                        </h3>
+
+                        <p>
+                            Các công đoạn sau khi in như tháo support,
+                            làm sạch, lắp ráp, xử lý bề mặt hoặc sơn
+                            sẽ được tính tùy mức độ thực tế.
+                        </p>
+
+                        <span class="checking-source">
+                            Công hoàn thiện
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             NOTE
+        ========================================== -->
+
+        <section class="price-note-section">
+
+            <div class="container">
+
+                <div class="price-note">
+
+                    <div class="price-note-mark">
+                        !
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Vì sao giá bán không chỉ bằng chi phí sản xuất?
+                        </h3>
+
+                        <p>
+                            Một sản phẩm in 3D không chỉ tiêu tốn nhựa.
+                            Xưởng còn phải đầu tư máy in, bảo trì thiết bị,
+                            điện, vật tư tiêu hao, thời gian xử lý file,
+                            kiểm tra sản phẩm và chịu rủi ro khi xảy ra
+                            lỗi in. Vì vậy giá bán cần có một phần lợi nhuận
+                            để xưởng có thể tiếp tục vận hành và bảo hành
+                            chất lượng sản phẩm.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © 2026 Xưởng In Nhỏ
+            </p>
+
+            <p>
+                <a href="index.html#lien-he">
+                    Liên hệ đặt hàng
+                </a>
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="JavaScript/index.js"></script>
+    <script src="JavaScript/tinh_gia.js"></script>
+
+</body>
+
+</html>
